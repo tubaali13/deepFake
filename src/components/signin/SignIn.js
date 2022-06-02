@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import './SignIn.css';
-
+import { Card } from 'react-bootstrap';
 
 function Copyright(props) {
   return (
@@ -50,9 +50,12 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
+          <Card style={{ padding: '32px', borderRadius: '8px' }} className="text-center" bg='light' border="primary">
+            <center>
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
+          </center>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
@@ -66,6 +69,8 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              
+              
             />
             <TextField
               margin="normal"
@@ -89,19 +94,17 @@ export default function SignIn() {
             >
               Sign In
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
+            <Link href="#" variant="body2">
                   Forgot password?
+                  
                 </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
+                <br/>
+            <Link href="#" variant="body2">
+              {"Don't have an account? Sign Up"}
+            </Link>
+            
           </Box>
+          </Card>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
 
