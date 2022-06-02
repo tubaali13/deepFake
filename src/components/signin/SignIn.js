@@ -11,7 +11,8 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import './SignIn.css';
+
 
 function Copyright(props) {
   return (
@@ -26,8 +27,6 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
-
 export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -39,12 +38,13 @@ export default function SignIn() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
+    <div className='signin min-vh-100 position-relative'>
+      <div className='img-overlay position-absolute w-100 h-100'>
+      <Container component="main" maxWidth="xs" >
+
         <Box
           sx={{
-            marginTop: 8,
+            paddingTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -104,7 +104,9 @@ export default function SignIn() {
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
+
       </Container>
-    </ThemeProvider>
+      </div>
+      </div>
   );
 }
